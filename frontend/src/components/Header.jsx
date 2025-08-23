@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <header className="flex justify-between items-center py-4 px-4 lg:px-20">
-      <h1 className="text-3xl md:text-4xl lg:text-5xl font-light m-0">
+      <h1 className="font-astron text-3xl md:text-4xl lg:text-5xl font-light m-0">
         VECTOR
       </h1>
       <nav className="hidden md:flex items-center gap-12">

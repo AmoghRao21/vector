@@ -1,7 +1,21 @@
+@font-face {
+    font-family: 'Astron Boy';
+    src: url('../public/AstronBoy.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 @import "tailwindcss";
+
+@theme {
+    --font-family: 'Astron Boy', cursive;
+}
+
+.font-astron {
+    font-family: 'Astron Boy', cursive;
+}
 
 @layer base {
     body {
         @apply bg-black text-white relative font-sans h-screen overflow-x-hidden;
     }
-}
+}              
