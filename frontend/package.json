@@ -13,10 +13,15 @@
     "@splinetool/react-spline": "^4.1.0",
     "@tailwindcss/vite": "^4.1.12",
     "boxicons": "^2.1.4",
+    "framer-motion": "^12.23.12",
     "lucide-react": "^0.541.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "tailwindcss": "^4.1.12"
+    "react-icons": "^5.5.0",
+    "react-tsparticles": "^2.12.2",
+    "tailwindcss": "^4.1.12",
+    "three": "^0.179.1",
+    "tsparticles-slim": "^2.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",
