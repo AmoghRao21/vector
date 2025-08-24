@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaGoogle, FaArrowLeft } from "react-icons/fa";
 
-// Particle background similar to other sections
+
 function LoginParticlesBG() {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -82,7 +82,7 @@ export default function AuthPage() {
   const [isLogin, setIsLogin] = useState(true);
 
   const handleGoogleAuth = () => {
-    // Implement Google OAuth logic here
+    // Google OAuth logic here
     console.log("Google authentication triggered");
   };
 
