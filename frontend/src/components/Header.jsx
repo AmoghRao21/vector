@@ -47,7 +47,9 @@ const Header = () => {
       </nav>
 
       <button className="hidden md:block bg-[#e99b63] text-black py-3 px-8 rounded-full border-none font-medium transition-all duration-500 hover:bg-white cursor-pointer z-50">
-        SIGN IN
+        <a href="/auth" className="text-black no-underline">
+          SIGN IN
+        </a>
       </button>
 
       <button

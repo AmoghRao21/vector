@@ -122,7 +122,7 @@ export default function CallToAction() {
           whileHover={{ scale: 1.05 }}
         >
           <a
-            href="#"
+            href="/auth"
             className="inline-flex items-center gap-3 px-12 py-4 bg-gradient-to-r from-[#e99b63] to-[#f9c199] hover:from-[#f9c199] hover:to-[#e99b63] font-bold rounded-full text-black hover:text-[#222] shadow-2xl hover:shadow-[0_0_40px_#e99b63] transition-all duration-300 text-xl md:text-2xl border-2 border-transparent hover:border-[#fff6ec]"
           >
             Get Started Now

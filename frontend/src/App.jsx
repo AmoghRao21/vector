@@ -1,26 +1,17 @@
 import React from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import FeatureGrid from "./components/FeatureGrid";
-import MentorsSection from "./components/MentorsSection";
-import CallToAction from "./components/CallToAction";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import AuthPage from "./components/AuthPage";
+
 export default function App() {
   return (
-    <main>
-      <img
-        className="absolute top-0 right-0 opacity-60 -z-10"
-        src="gradient.png"
-        alt=""
-      />
-
-      <div className="h-0 w-[40rem] absolute top-[20%] right-[-5%] shadow-[0_0_900px_20px_#e99b63] -rotate-[30deg] -z-10"></div>
-      <Header />
-      <Hero />
-      <FeatureGrid />
-      <MentorsSection />
-      <CallToAction />
-      <Footer />
-    </main>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/login" element={<AuthPage />} />
+        <Route path="/signup" element={<AuthPage />} />
+      </Routes>
+    </Router>
   );
 }
