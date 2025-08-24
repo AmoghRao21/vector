@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import AuthPage from "./components/AuthPage";
-import MockTestsPage from "./components/Mocktest";
+import MockTestsPage from "./components/MockTestsPage";
 import ContactPage from "./components/ContactPage";
 
 export default function App() {
@@ -17,5 +17,5 @@ export default function App() {
         <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Router>
-  ); 
+  );
 }
