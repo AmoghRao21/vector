@@ -98,7 +98,12 @@ function Card({ icon: Icon, title, description, bgColors, svgPath, index }) {
     controls.start({
       opacity: 1,
       y: 0,
-      transition: { delay: index * 0.15, type: "spring", stiffness: 80, damping: 12 },
+      transition: {
+        delay: index * 0.15,
+        type: "spring",
+        stiffness: 80,
+        damping: 12,
+      },
     });
   }, [controls, index]);
 
@@ -164,8 +169,13 @@ function Card({ icon: Icon, title, description, bgColors, svgPath, index }) {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col gap-6">
-        <Icon className="w-14 h-14 text-[#e99b63] drop-shadow-lg" aria-hidden="true" />
-        <h3 className="text-3xl font-extrabold tracking-wide text-white drop-shadow-lg">{title}</h3>
+        <Icon
+          className="w-14 h-14 text-[#e99b63] drop-shadow-lg"
+          aria-hidden="true"
+        />
+        <h3 className="text-3xl font-extrabold tracking-wide text-white drop-shadow-lg">
+          {title}
+        </h3>
         <p className="text-gray-300 text-base leading-relaxed">{description}</p>
       </div>
 
@@ -186,7 +196,8 @@ export default function FeatureGrid() {
           </span>
         </h2>
         <p className="text-center max-w-4xl mx-auto mb-24 text-xl text-gray-400 tracking-wide">
-          Our comprehensive preparation resources are designed to help you excel in the Scaler NSET exam
+          Our comprehensive preparation resources are designed to help you excel
+          in the Scaler NSET exam
         </p>
 
         <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-3">

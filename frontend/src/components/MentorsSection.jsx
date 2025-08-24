@@ -113,9 +113,12 @@ function OrangeParticlesBG() {
       ref={canvasRef}
       style={{
         position: "absolute",
-        top: 0, left: 0, width: "100vw", height: "60vh",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "60vh",
         pointerEvents: "none",
-        zIndex: 1
+        zIndex: 1,
       }}
       width={window.innerWidth}
       height={window.innerHeight / 1.5}
@@ -131,8 +134,17 @@ function MentorCard({ mentor, idx }) {
       className="mentor-card relative w-[325px] max-w-[90vw] rounded-2xl flex-shrink-0 p-8 mx-3 mb-4 overflow-hidden bg-gradient-to-tr from-[#171717]/90 via-[#222]/95 to-[#191919]/90 border border-[#e99b6341] backdrop-blur-lg shadow-lg hover:shadow-[#e99b63ab] transition duration-300"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: idx * 0.14, type: "spring", stiffness: 80, damping: 11 }}
-      whileHover={{ scale: 1.04, zIndex: 10, boxShadow: "0 6px 28px #e99b63c2" }}
+      transition={{
+        delay: idx * 0.14,
+        type: "spring",
+        stiffness: 80,
+        damping: 11,
+      }}
+      whileHover={{
+        scale: 1.04,
+        zIndex: 10,
+        boxShadow: "0 6px 28px #e99b63c2",
+      }}
       style={{ minWidth: "280px" }}
     >
       <div className="flex justify-center mb-4 relative">
@@ -141,7 +153,8 @@ function MentorCard({ mentor, idx }) {
             className="absolute inset-0 rounded-full pointer-events-none"
             aria-hidden="true"
             style={{
-              background: "radial-gradient(circle, #e99b63cc 50%, transparent 100%)",
+              background:
+                "radial-gradient(circle, #e99b63cc 50%, transparent 100%)",
               filter: "blur(16px)",
               zIndex: 0,
             }}
@@ -154,13 +167,22 @@ function MentorCard({ mentor, idx }) {
         </div>
       </div>
       <div className="text-center mb-3">
-        <h3 className="text-xl font-bold text-white tracking-wider">{mentor.name} {mentor.role && <span className="text-gray-400">({mentor.role})</span>}</h3>
+        <h3 className="text-xl font-bold text-white tracking-wider">
+          {mentor.name}{" "}
+          {mentor.role && (
+            <span className="text-gray-400">({mentor.role})</span>
+          )}
+        </h3>
         {mentor.tagline && (
-          <p className="text-[#e99b63] mt-1 text-xs font-semibold">{mentor.tagline}</p>
+          <p className="text-[#e99b63] mt-1 text-xs font-semibold">
+            {mentor.tagline}
+          </p>
         )}
       </div>
       <div className="p-4 rounded-lg bg-[#212129] bg-opacity-97 mb-6 text-xs text-gray-200">
-        <div className="font-semibold mb-2 text-white tracking-wide">ACHIEVEMENTS</div>
+        <div className="font-semibold mb-2 text-white tracking-wide">
+          ACHIEVEMENTS
+        </div>
         <ul className="list-disc list-inside space-y-1">
           {mentor.achievements.map((item, i) => (
             <li key={i}>{item}</li>
@@ -187,7 +209,7 @@ export default function MentorsSection() {
     <section
       className="w-full relative overflow-hidden py-20 min-h-[80vh]"
       style={{
-        background: "#131313"
+        background: "#131313",
       }}
     >
       {/* Particle Background */}
@@ -195,17 +217,25 @@ export default function MentorsSection() {
         <OrangeParticlesBG />
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <h2 className="text-center text-4xl md:text-5xl font-extrabold mb-5 text-white"
-            style={{letterSpacing: "0.01em"}}>
-          Our <span className="bg-gradient-to-r from-[#e99b63] via-[#fff6ec] to-[#e99b63] text-transparent bg-clip-text">Mentors</span>
+        <h2
+          className="text-center text-4xl md:text-5xl font-extrabold mb-5 text-white"
+          style={{ letterSpacing: "0.01em" }}
+        >
+          Our{" "}
+          <span className="bg-gradient-to-r from-[#e99b63] via-[#fff6ec] to-[#e99b63] text-transparent bg-clip-text">
+            Mentors
+          </span>
         </h2>
         <p className="text-center mb-10 max-w-2xl mx-auto text-gray-300 text-base md:text-lg">
-          Learn from experienced SST students who've excelled in the NSET exam and are ready to guide you to success.
+          Learn from experienced SST students who've excelled in the NSET exam
+          and are ready to guide you to success.
         </p>
-        <div className="mentor-scroll-area w-full overflow-x-auto overflow-y-hidden flex space-x-4 scroll-smooth py-2 scrollbar-hide"
+        <div
+          className="mentor-scroll-area w-full overflow-x-auto overflow-y-hidden flex space-x-4 scroll-smooth py-2 scrollbar-hide"
           style={{
-            WebkitOverflowScrolling: "touch"
-          }}>
+            WebkitOverflowScrolling: "touch",
+          }}
+        >
           {MENTORS.map((mentor, idx) => (
             <MentorCard key={mentor.name} mentor={mentor} idx={idx} />
           ))}
@@ -214,7 +244,8 @@ export default function MentorsSection() {
           &larr; Scroll to see more mentors &rarr;
         </p>
         <p className="mt-4 text-center text-xs text-gray-600">
-          Our mentors have successfully navigated the NSET journey and are passionate about helping you succeed.
+          Our mentors have successfully navigated the NSET journey and are
+          passionate about helping you succeed.
         </p>
       </div>
       <style>{`
