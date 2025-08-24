@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FaGoogle, FaArrowLeft } from "react-icons/fa";
 
-
 function LoginParticlesBG() {
   const canvasRef = useRef(null);
   useEffect(() => {
@@ -107,32 +106,21 @@ export default function AuthPage() {
       <div className="absolute top-10 right-10 w-[30rem] h-[30rem] bg-[#e99b63] opacity-10 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-[25rem] h-[25rem] bg-[#e99b63] opacity-5 rounded-full blur-3xl"></div>
 
-      {/* Back to home button */}
+      {/* Logo */}
       <motion.a
         href="/"
-        className="absolute top-8 left-8 flex items-center gap-2 text-gray-400 hover:text-[#e99b63] transition-colors duration-300 z-20"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6 }}
-        whileHover={{ x: -5 }}
-      >
-        <FaArrowLeft />
-        <span>Back to Home</span>
-      </motion.a>
-
-      {/* Logo */}
-      <motion.div
-        className="absolute top-8 right-8 z-20"
+        className="absolute top-8 left-8 z-20"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
+        transition={{ duration: 0.6 }}
+        whileHover={{ scale: 1.05 }}
       >
         <h1 className="font-astron text-2xl md:text-3xl font-light">
           <span className="bg-gradient-to-r from-[#e99b63] via-[#fff6ec] to-[#e99b63] text-transparent bg-clip-text">
             VECTOR
           </span>
         </h1>
-      </motion.div>
+      </motion.a>
 
       {/* Main Auth Container */}
       <motion.div

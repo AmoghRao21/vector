@@ -45,7 +45,7 @@ const Header = () => {
 
         <a
           className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
-          href="#"
+          href="/contact"
         >
           Contact Us
         </a>
@@ -107,7 +107,7 @@ const Header = () => {
 
                 <a
                   className="text-lg tracking-wider transition-all duration-300 hover:text-[#e99b63] hover:scale-105 relative group text-white/90"
-                  href="#"
+                  href="/contact"
                 >
                   Contact Us
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#e99b63] transition-all duration-300 group-hover:w-full"></span>
