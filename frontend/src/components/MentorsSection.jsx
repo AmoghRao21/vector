@@ -2,13 +2,12 @@ import React, { useEffect, useRef } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-// Your actual data here
 const MENTORS = [
   {
     name: "Shaurya Verma",
     role: "Co-Founder",
     tagline: "Guided 25+ aspirants for NSET",
-    image: "/avatars/shaurya.jpg",
+    image: "shaurya1.jpg",
     achievements: [
       "Offered 20% scholarship at SST",
       "Member @NoIgn-Club-SST",
@@ -20,7 +19,7 @@ const MENTORS = [
     name: "Rudhar Bajaj",
     role: "Co-Founder",
     tagline: "Guided 20+ aspirants for NSET",
-    image: "/avatars/rudhar.jpg",
+    image: "rudhar.jpg",
     achievements: [
       "Offered 20% scholarship at SST",
       "AIR 24k in JEE Advanced",
@@ -32,7 +31,7 @@ const MENTORS = [
     name: "Aatmik Panse",
     role: "",
     tagline: "",
-    image: "/avatars/aatmik.jpg",
+    image: "aatmik.jpg",
     achievements: [
       "Ex intern @Skai Lama",
       "Core member @XR Club-SST",
@@ -44,7 +43,7 @@ const MENTORS = [
     name: "Srinidhi Nanda",
     role: "",
     tagline: "",
-    image: "/avatars/srinidhi.jpg",
+    image: "srinidhi.jpg",
     achievements: [
       "Female president @SST",
       "Member @NoIgn-Club-SST",
@@ -54,7 +53,6 @@ const MENTORS = [
   },
 ];
 
-// Particle background: canvas-based for performance and beauty
 function OrangeParticlesBG() {
   const canvasRef = useRef(null);
 
@@ -131,7 +129,7 @@ function OrangeParticlesBG() {
 function MentorCard({ mentor, idx }) {
   return (
     <motion.div
-      className="mentor-card relative w-[325px] max-w-[90vw] rounded-2xl flex-shrink-0 p-8 mx-3 mb-4 overflow-hidden bg-gradient-to-tr from-[#171717]/90 via-[#222]/95 to-[#191919]/90 border border-[#e99b6341] backdrop-blur-lg shadow-lg hover:shadow-[#e99b63ab] transition duration-300"
+      className="mentor-card relative w-[325px] max-w-[90vw] rounded-2xl flex-shrink-0 p-8 mx-3 my-6 overflow-hidden bg-gradient-to-tr from-[#171717]/90 via-[#222]/95 to-[#191919]/90 border border-[#e99b6341] backdrop-blur-lg shadow-lg hover:shadow-[#e99b63ab] transition duration-300"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -231,7 +229,7 @@ export default function MentorsSection() {
           and are ready to guide you to success.
         </p>
         <div
-          className="mentor-scroll-area w-full overflow-x-auto overflow-y-hidden flex space-x-4 scroll-smooth py-2 scrollbar-hide"
+          className="mentor-scroll-area w-full overflow-x-auto overflow-y-visible flex space-x-4 scroll-smooth py-8 scrollbar-hide"
           style={{
             WebkitOverflowScrolling: "touch",
           }}
@@ -248,17 +246,6 @@ export default function MentorsSection() {
           passionate about helping you succeed.
         </p>
       </div>
-      <style>{`
-        /* Hide scrollbar for Chrome/Safari/Webkit */
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none !important;
-        }
-        /* Hide scrollbar for IE, Edge and Firefox */
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </section>
   );
 }

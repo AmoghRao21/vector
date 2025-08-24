@@ -3,6 +3,8 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import FeatureGrid from "./components/FeatureGrid";
 import MentorsSection from "./components/MentorsSection";
+import CallToAction from "./components/CallToAction";
+import Footer from "./components/Footer";
 export default function App() {
   return (
     <main>
@@ -17,6 +19,8 @@ export default function App() {
       <Hero />
       <FeatureGrid />
       <MentorsSection />
+      <CallToAction />
+      <Footer />
     </main>
   );
 }
