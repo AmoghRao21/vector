@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useNavigate, useParams } from "react-router-dom";
 import Footer from "./Footer";
 import testData from "../data/testData.json";
@@ -85,6 +85,7 @@ function TestParticlesBG() {
 
 const TestStartPage = () => {
   const [agreed, setAgreed] = useState(false);
+  const [showFullscreenModal, setShowFullscreenModal] = useState(false);
   const navigate = useNavigate();
   const { testId } = useParams();
 
@@ -95,10 +96,46 @@ const TestStartPage = () => {
 
   const handleStartTest = () => {
     if (agreed) {
-      // Navigate to actual test page with testId
-      alert(`Starting ${currentTest.title}... (Navigate to actual test page)`);
+      setShowFullscreenModal(true);
     }
   };
+
+  const handleEnterFullscreen = async () => {
+    try {
+      await document.documentElement.requestFullscreen();
+      setShowFullscreenModal(false);
+      // Navigate to actual test page with testId
+      navigate(`/test/${currentTest.id}`);
+    } catch (error) {
+      console.error("Error entering fullscreen:", error);
+      alert("Unable to enter fullscreen mode. Please try again.");
+    }
+  };
+
+  const handleCloseModal = () => {
+    setShowFullscreenModal(false);
+  };
+
+  // Handle ESC key to close modal and prevent body scroll
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape" && showFullscreenModal) {
+        handleCloseModal();
+      }
+    };
+
+    if (showFullscreenModal) {
+      document.body.style.overflow = "hidden";
+      document.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [showFullscreenModal]);
 
   const containerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -374,6 +411,74 @@ const TestStartPage = () => {
 
         <Footer />
       </div>
+
+      {/* Fullscreen Modal */}
+      <AnimatePresence>
+        {showFullscreenModal && (
+          <motion.div
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-gradient-to-br from-white/10 via-white/5 to-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 md:p-12 shadow-2xl max-w-md w-full mx-4"
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{
+                type: "spring",
+                stiffness: 400,
+                damping: 25,
+              }}
+            >
+              {/* Modal Header */}
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-[#e99b63] mb-2">
+                  Start {currentTest.title}
+                </h3>
+                <div className="w-16 h-1 bg-gradient-to-r from-[#e99b63] to-[#f9c199] mx-auto rounded-full"></div>
+              </div>
+
+              {/* Modal Content */}
+              <div className="text-center text-gray-200 space-y-4 mb-8">
+                <p className="text-lg">
+                  This test must be taken in full-screen mode. The test will
+                  automatically end if you exit full-screen mode for more than
+                  45 seconds.
+                </p>
+
+                <div className="bg-yellow-500/20 border border-yellow-500/30 rounded-lg p-4">
+                  <p className="text-yellow-300 font-medium">
+                    Full-screen mode is required for this test.
+                  </p>
+                </div>
+              </div>
+
+              {/* Modal Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <motion.button
+                  onClick={handleCloseModal}
+                  className="flex-1 px-6 py-3 rounded-full border border-gray-600 text-gray-300 font-medium transition-all duration-300 hover:bg-gray-600/20 hover:border-gray-500"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Cancel
+                </motion.button>
+
+                <motion.button
+                  onClick={handleEnterFullscreen}
+                  className="flex-1 px-6 py-3 rounded-full bg-[#e99b63] text-black font-medium transition-all duration-300 hover:bg-[#f9c199] shadow-lg"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Enter Fullscreen & Start
+                </motion.button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
