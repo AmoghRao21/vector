@@ -38,9 +38,9 @@ const Header = () => {
 
         <a
           className="text-base tracking-wider transition-colors hover:text-gray-300 z-50"
-          href="#"
+          href="/ai-interview"
         >
-          Interview Prep{" "}
+          Interview Prep
         </a>
 
         <a

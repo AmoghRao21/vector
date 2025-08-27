@@ -4,7 +4,7 @@ import HomePage from "./components/HomePage";
 import AuthPage from "./components/AuthPage";
 import MockTestsPage from "./components/MockTestsPage";
 import ContactPage from "./components/ContactPage";
-import AIInterviewAgent from "./components/AIIntervieAgent"
+import AIInterviewAgent from "./components/AIInterviewAgent";
 
 export default function App() {
   return (
