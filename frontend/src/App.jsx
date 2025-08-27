@@ -5,6 +5,7 @@ import AuthPage from "./components/AuthPage";
 import MockTestsPage from "./components/MockTestsPage";
 import ContactPage from "./components/ContactPage";
 import AIInterviewAgent from "./components/AIInterviewAgent";
+import TestStartPage from "./components/TestStartPage";
 
 export default function App() {
   return (
@@ -17,6 +18,8 @@ export default function App() {
         <Route path="/mock-tests" element={<MockTestsPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/ai-interview" element={<AIInterviewAgent />} />
+        <Route path="/start" element={<TestStartPage />} />
+        <Route path="/start/:testId" element={<TestStartPage />} />
       </Routes>
     </Router>
   );

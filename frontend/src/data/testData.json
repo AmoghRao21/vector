@@ -1,0 +1,109 @@
+{
+  "tests": [
+    {
+      "id": "mock-test-1",
+      "title": "Mock Test 1",
+      "duration": 120,
+      "totalQuestions": 31,
+      "description": "Comprehensive aptitude test covering quantitative and logical reasoning",
+      "instructions": [
+        "The test consists of 31 questions to be completed in 120 minutes.",
+        "For each question, you need to type your answer in the provided text field. Make sure to format your answer correctly.",
+        "You can use the navigation panel to jump to any question. Unattempted questions will be marked in gray, attempted in green.",
+        "You can mark questions for review and come back to them later.",
+        "The test will automatically submit when the time is up. You can also submit manually before time expires."
+      ],
+      "importantNotes": [
+        {
+          "type": "warning",
+          "text": "Make sure your answers don't have any extra spaces before or after the text. Answers with leading or trailing spaces may be marked as incorrect."
+        },
+        {
+          "type": "error",
+          "text": "The test must be taken in full-screen mode. The test will automatically end if you exit full-screen mode for more than 45 seconds. Right-clicking and copy-pasting are disabled during the test."
+        }
+      ],
+      "components": [
+        {
+          "name": "Quantitative Aptitude",
+          "description": "Probability & statistics, permutation & combination, arithmetic progressions, geometry, algebra"
+        },
+        {
+          "name": "Logical Reasoning",
+          "description": "Direction sense, coding-decoding, clocks & calendars, blood relations, series completion"
+        }
+      ],
+      "agreementText": "I have read and understood the instructions. You must agree to start the test. Once started, the timer cannot be paused."
+    },
+    {
+      "id": "mock-test-2",
+      "title": "Mock Test 2 - Advanced",
+      "duration": 180,
+      "totalQuestions": 45,
+      "description": "Advanced level test with higher difficulty questions",
+      "instructions": [
+        "The test consists of 45 questions to be completed in 180 minutes.",
+        "This is an advanced level test with complex problem-solving questions.",
+        "Each question carries different weightage based on difficulty level.",
+        "Negative marking applies: -0.25 marks for each incorrect answer.",
+        "You can use the navigation panel to jump to any question. Color coding: Gray (unattempted), Green (attempted), Red (marked for review)."
+      ],
+      "importantNotes": [
+        {
+          "type": "warning",
+          "text": "Negative marking is applicable. Think carefully before answering as incorrect answers will deduct marks."
+        },
+        {
+          "type": "error",
+          "text": "Calculator usage is not permitted. The test must be taken in full-screen mode without any external assistance."
+        }
+      ],
+      "components": [
+        {
+          "name": "Advanced Mathematics",
+          "description": "Calculus, linear algebra, differential equations, complex analysis"
+        },
+        {
+          "name": "Analytical Reasoning",
+          "description": "Critical thinking, pattern recognition, data interpretation, logical puzzles"
+        },
+        {
+          "name": "Problem Solving",
+          "description": "Multi-step problems, optimization, algorithmic thinking"
+        }
+      ],
+      "agreementText": "I understand this is an advanced test with negative marking. I agree to attempt the test under the specified conditions."
+    },
+    {
+      "id": "mock-test-3",
+      "title": "Quick Assessment",
+      "duration": 60,
+      "totalQuestions": 20,
+      "description": "Short assessment test for basic skill evaluation",
+      "instructions": [
+        "The test consists of 20 questions to be completed in 60 minutes.",
+        "This is a basic skill assessment covering fundamental concepts.",
+        "All questions are mandatory and carry equal weightage.",
+        "No negative marking for incorrect answers.",
+        "Submit immediately after completing all questions."
+      ],
+      "importantNotes": [
+        {
+          "type": "info",
+          "text": "This is a practice test. Your performance will be used for skill assessment and personalized recommendations."
+        }
+      ],
+      "components": [
+        {
+          "name": "Basic Mathematics",
+          "description": "Arithmetic, basic algebra, geometry fundamentals"
+        },
+        {
+          "name": "Logical Thinking",
+          "description": "Basic reasoning, pattern identification, simple logical problems"
+        }
+      ],
+      "agreementText": "I agree to take this assessment test. I understand this is for evaluation purposes."
+    }
+  ]
+}

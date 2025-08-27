@@ -1,9 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaMicrophone, FaStop, FaDownload } from "react-icons/fa";
-
-import React, { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaMicrophone, FaStop, FaDownload } from "react-icons/fa";
 
