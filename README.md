@@ -1,7 +1,7 @@
-# Vector
+# [Vector](https://vector-lovat.vercel.app/)
 (project still under development)
 
-An AI-powered online tutoring platform specifically designed for the **NSET (Scaler School of Technology Entrance Exam)** preparation.
+It is an AI-powered online tutoring platform specifically designed for the **NSET (Scaler School of Technology Entrance Exam)** preparation.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![React](https://img.shields.io/badge/React-18+-blue.svg)](https://reactjs.org/)
